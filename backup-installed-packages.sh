@@ -12,4 +12,10 @@ comm -23 <(apt-mark showmanual | sort) \
 echo "[*] Speichere installierte Snap-Pakete..."
 snap list | awk 'NR>1 {print $1}' >"$BACKUP_DIR/snap-packages.list"
 
-echo "[✓] Backup abgeschlossen: $BACKUP_DIR"
+echo "[*] Speichere APT-Repositories..."
+
+# Sichere alle zusätzlichen Repositories
+cp -r /etc/apt/sources.list.d "$BACKUP_DIR/sources.list.d"
+cp /etc/apt/sources.list "$BACKUP_DIR/sources.list"
+
+echo "[✓] Backup abgeschlossen in: $BACKUP_DIR"
