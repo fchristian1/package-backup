@@ -2,7 +2,7 @@
 # ~/update-package-backup-scripts.sh
 
 REPO_URL="https://raw.githubusercontent.com/fchristian1/package-backup/main"
-TARGET_DIR="$HOME"
+TARGET_DIR="./"
 FILES=("backup-installed-packages.sh" "restore-installed-packages.sh")
 
 echo "[*] Lade aktuelle Skripte aus dem GitHub-Repo..."
